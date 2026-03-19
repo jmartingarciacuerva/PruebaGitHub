@@ -27,15 +27,15 @@ public class Alvaro {
 
         // Línea superior horizontal
         dibujarLinea(lienzo, xMin, xMax, yMin, yMax,
-                xy1, xy1, x2, xy1, '#');
+                xy1, xy1, x2, xy1);
 
         // Palo vertical
         dibujarLinea(lienzo, xMin, xMax, yMin, yMax,
-                palo, xy1, x2 / yalto, palo, '#');
+                palo, xy1, x2 / yalto, palo);
 
         // Línea inferior horizontal
         dibujarLinea(lienzo, xMin, xMax, yMin, yMax,
-                xy1, palo, x2, palo, '#');
+                xy1, palo, x2, palo);
 
         imprimirLienzo(lienzo);
     }
@@ -156,14 +156,13 @@ public class Alvaro {
                              double xMin, double xMax,
                              double yMin, double yMax,
                              double x1, double y1,
-                             double x2, double y2,
-                             char c) {
+                             double x2, double y2) {
         int pasos = 300;
         for (int i = 0; i <= pasos; i++) {
             double t = (double) i / pasos;
             double x = x1 + (x2 - x1) * t;
             double y = y1 + (y2 - y1) * t;
-            ponerPunto(lienzo, xMin, xMax, yMin, yMax, x, y, c);
+            ponerPunto(lienzo, xMin, xMax, yMin, yMax, x, y, '#');
         }
     }
 
